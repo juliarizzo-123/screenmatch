@@ -35,7 +35,7 @@ public class Principal {
 
 
         Filme filme3 = new Filme();
-        filme3.setNome("Avatar");
+        filme3.setNome("Avatar 2");
         filme3.setAnoDeLancamento(2023);
         filme3.setDuracaoEmMinutos(200);
 

@@ -42,3 +42,7 @@ public class Serie extends Titulo{
         return epsodiosPorTemporada * minutosPorEpsodios * temporadas;
     }
 }
+
+
+
+
