@@ -1,6 +1,8 @@
 package modelos;
 
-public class Titulo {
+import calculos.Classificavel;
+
+public class Titulo  {
     //quando declara a variavel sem o metodo main é q td "filme" tem
     private String nome;
     private int anoDeLancamento;
@@ -52,6 +54,8 @@ public class Titulo {
     public int getTotalDeAvaliacao() {
         return totalDeAvaliacao;
     }
+
+
 
 // com esse metodo mostra avaliaçoes eu nn preciso fazer um get para total de avaliaçoes
 //   public void  mostraAvaliacoes(){
