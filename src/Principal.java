@@ -4,6 +4,8 @@ import modelos.Episodio;
 import modelos.Filme;
 import modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         // tipo por referencia ao obj
@@ -56,6 +58,25 @@ public class Principal {
         FiltroRecomendacao filtro = new FiltroRecomendacao();
         filtro.filtra(meuFilme);
         filtro.filtra(episodio);
+
+        // no lugar de escrever Filme filmeDoPaulo = new Filme();
+        //tambem vale---> var .....
+        var filmeDoPaulo = new Filme();
+        filmeDoPaulo.setNome("dogville");
+        filmeDoPaulo.setAnoDeLancamento(2003);
+        filmeDoPaulo.setDuracaoEmMinutos(200);
+        filmeDoPaulo.avalia(10);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(filme3);
+        listaDeFilmes.add(filmeDoPaulo);
+        System.out.println("O tamanho da lista é: " + listaDeFilmes.size());
+        System.out.println("O primeiro filme é: " + listaDeFilmes.get(0).getNome());
+        System.out.println(listaDeFilmes);
+        System.out.println("toString " + listaDeFilmes.get(0).toString());
+
+
     }
 }
 
