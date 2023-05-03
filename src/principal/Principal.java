@@ -1,3 +1,5 @@
+package principal;
+
 import calculos.CalculadoraDeTempo;
 import calculos.FiltroRecomendacao;
 import modelos.Episodio;
@@ -9,12 +11,12 @@ import java.util.ArrayList;
 public class Principal {
     public static void main(String[] args) {
         // tipo por referencia ao obj
-        Filme meuFilme = new Filme();
+        Filme meuFilme = new Filme("O Poderoso Chefão", 1970);
         //criando o obj /guarda o obj
 
         //atribuindo valor aos atributos: / instanciando
-        meuFilme.setNome("O Poderoso Chefão");
-        meuFilme.setAnoDeLancamento(1970);
+//        meuFilme.setNome("O Poderoso Chefão");
+//        meuFilme.setAnoDeLancamento(1970);
         meuFilme.setDuracaoEmMinutos(180);
         meuFilme.getIncluidoNoPlano(true);
 
@@ -28,9 +30,9 @@ public class Principal {
        // System.out.println("Total de avaliaçoes: " + meuFilme.getTotalDeAvaliacao());
         System.out.println("A media das avaliaçoes é: " + meuFilme.pegaMedia());
 
-        Serie lost = new Serie();
-        lost.setNome("lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("lost", 2000);
+//        lost.setNome("lost");
+//        lost.setAnoDeLancamento(2000);
         lost.exibeFichaTecnica();
         lost.setMinutosPorEpsodios(40);
         lost.setEpsodiosPorTemporada(20);
@@ -38,9 +40,9 @@ public class Principal {
         System.out.println("duraçao em min: " + lost.getDuracaoEmMinutos());
 
 
-        Filme filme3 = new Filme();
-        filme3.setNome("Avatar 2");
-        filme3.setAnoDeLancamento(2023);
+        Filme filme3 = new Filme("Avatar 2", 2023);
+//        filme3.setNome("Avatar 2");
+//        filme3.setAnoDeLancamento(2023);
         filme3.setDuracaoEmMinutos(200);
 
 
@@ -61,9 +63,7 @@ public class Principal {
 
         // no lugar de escrever Filme filmeDoPaulo = new Filme();
         //tambem vale---> var .....
-        var filmeDoPaulo = new Filme();
-        filmeDoPaulo.setNome("dogville");
-        filmeDoPaulo.setAnoDeLancamento(2003);
+        var filmeDoPaulo = new Filme("dogville", 2003);
         filmeDoPaulo.setDuracaoEmMinutos(200);
         filmeDoPaulo.avalia(10);
 
@@ -72,9 +72,9 @@ public class Principal {
         listaDeFilmes.add(filme3);
         listaDeFilmes.add(filmeDoPaulo);
         System.out.println("O tamanho da lista é: " + listaDeFilmes.size());
-        System.out.println("O primeiro filme é: " + listaDeFilmes.get(0).getNome());
+        System.out.println("O primeiro filme é: " + listaDeFilmes.get(0));
         System.out.println(listaDeFilmes);
-        System.out.println("toString " + listaDeFilmes.get(0).toString());
+//       // System.out.println("toString " + listaDeFilmes.get(0).toString());
 
 
     }
