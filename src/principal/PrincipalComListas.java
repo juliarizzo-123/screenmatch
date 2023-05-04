@@ -29,7 +29,7 @@ public class PrincipalComListas {
         for (Titulo item: lista) {
             System.out.println("nome: " + item.getNome());
 
-            //da certo só para filmes e qnd "aparece" da erro
+            //da certo só para filmes e qnd "aparece" Serie da erro
 //            Filme filme = (Filme) item;
 //            System.out.println("avaliaçao: " + filme.getClassificacao());
 
