@@ -17,7 +17,7 @@ public class Titulo  implements Comparable<Titulo> {
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
     public void setNome(String nome) {
         this.nome = nome;
@@ -56,6 +56,14 @@ public class Titulo  implements Comparable<Titulo> {
     public double pegaMedia(){
         return somaDasAvaliacoes / totalDeAvaliacao;
     }
+    // com esse metodo mostra avaliaçoes eu nn preciso fazer um get para total de avaliaçoes
+//   public void  mostraAvaliacoes(){
+//        System.out.println("Soma das avaliaçoes do flme: " + somaDasAvaliacoes);
+//        System.out.println("Total de avaliaçoes: " + totalDeAvaliacao);
+//        System.out.println("A media das avaliaçoes é: " + pegaMedia());
+//
+//    }
+// mas se nn tivesse precisaria ex
     public int getTotalDeAvaliacao() {
         return totalDeAvaliacao;
     }
@@ -64,16 +72,13 @@ public class Titulo  implements Comparable<Titulo> {
     public int compareTo(Titulo outroTitulo) {
         return this.getNome().compareTo(outroTitulo.getNome());
     }
-
-
-// com esse metodo mostra avaliaçoes eu nn preciso fazer um get para total de avaliaçoes
-//   public void  mostraAvaliacoes(){
-//        System.out.println("Soma das avaliaçoes do flme: " + somaDasAvaliacoes);
-//        System.out.println("Total de avaliaçoes: " + totalDeAvaliacao);
-//        System.out.println("A media das avaliaçoes é: " + pegaMedia());
-//
+//    poderia fazer o toString so aqui porem nao iria imprimir "bonitinho" e separado para serie e filme
+//    @Override
+//    public String toString() {
+//        return "Nome: " + nome;
 //    }
-// mas se nn tivesse precisaria ex
+
+
 }
 
 

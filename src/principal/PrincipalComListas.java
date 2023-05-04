@@ -4,11 +4,11 @@ import modelos.Filme;
 import modelos.Serie;
 import modelos.Titulo;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
+
         Filme favorito = new Filme("The Matrix" , 1999);
         favorito.avalia(10);
 
@@ -18,10 +18,13 @@ public class PrincipalComListas {
         Serie serie = new Serie("la casa de papel", 2017);
         serie.avalia(8);
 
-        ArrayList <Titulo> lista = new ArrayList<>();
+//        ArrayList <Titulo> lista = new ArrayList<>();
+//        poderia ser o arraylist porem a "boa pratica" é usar o list
+        List <Titulo> lista = new LinkedList<>();
         lista.add(favorito);
         lista.add(outro);
         lista.add(serie);
+
 
         for (Titulo item: lista) {
             System.out.println("nome: " + item.getNome());
@@ -35,22 +38,32 @@ public class PrincipalComListas {
                 System.out.println("Classificaçao: " + filme.getClassificacao());
 
             }
+        }
 
-            ArrayList<String> buscaPorArtista = new ArrayList<>();
-            buscaPorArtista.add("alex");
-            buscaPorArtista.add("julia");
-            buscaPorArtista.add("elaine");
+        ArrayList <String> buscaPorArtista = new ArrayList<>();
+        buscaPorArtista.add("alex");
+        buscaPorArtista.add("julia");
+        buscaPorArtista.add("elaine");
 
-            System.out.println(buscaPorArtista);
+        System.out.println(buscaPorArtista);
+        //para mostrar a lista em ordem alfabetica
+        System.out.println("organizado");
+        Collections.sort(buscaPorArtista);
+        System.out.println(buscaPorArtista);
+        System.out.println("Ordem de 'criaçao': ");
+        System.out.println(lista);
+        System.out.println("lista ordenada: ");
+//        // so da certo depois de implementar implements Comparable<Titulo> na classe titulo
+        Collections.sort(lista);
+        System.out.println(lista);
+//        para comparar por ano de lançamento:
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Ordenando por ano: ");
+        System.out.println(lista);
 
-            //para mostrar a lista em ordem alfabetica
-            System.out.println("organizado");
-            Collections.sort(buscaPorArtista);
-            // so da certo depois de implementar implements Comparable<Titulo> na classe titulo
-            Collections.sort(lista);
 
             
-        }
+
         
         
         
