@@ -1,4 +1,4 @@
-package teste;
+package exemplosAleatorios;
 
 public class Teste {
     public static void main(String[] args) {

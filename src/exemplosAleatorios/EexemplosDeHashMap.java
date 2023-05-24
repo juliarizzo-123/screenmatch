@@ -1,4 +1,4 @@
-package teste;
+package exemplosAleatorios;
 import java.util.HashMap;
 import java.util.Map;
 public class EexemplosDeHashMap {

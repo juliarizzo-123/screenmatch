@@ -1,10 +1,14 @@
 package modelos;
 
 import calculos.Classificavel;
+import com.google.gson.annotations.SerializedName;
+import excecao.ErroDeConversaoDeAnoException;
 
 public class Titulo  implements Comparable<Titulo> {
     //quando declara a variavel sem o metodo main é q td "filme" tem
+    @SerializedName("Title") //corre o risco de se mudar o nome vai dar erro
     private String nome;
+    @SerializedName("Yaer")
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
@@ -14,6 +18,18 @@ public class Titulo  implements Comparable<Titulo> {
     public Titulo(String nome, int anoDeLancamento) {
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public Titulo(TituloOmdb meutituloOmdb){
+        this.nome = meutituloOmdb.title();
+
+        if (meutituloOmdb.year().length() > 4){
+            throw new ErroDeConversaoDeAnoException("não consegui converter o ano pois tem mais de 4 caracteres");
+        }
+
+
+        this.anoDeLancamento = Integer.valueOf(meutituloOmdb.year());
+        this.duracaoEmMinutos = Integer.valueOf(meutituloOmdb.runtime().substring(0, 2));
     }
 
     public String getNome() {
@@ -73,12 +89,14 @@ public class Titulo  implements Comparable<Titulo> {
         return this.getNome().compareTo(outroTitulo.getNome());
     }
 //    poderia fazer o toString so aqui porem nao iria imprimir "bonitinho" e separado para serie e filme
-//    @Override
-//    public String toString() {
-//        return "Nome: " + nome;
-//    }
 
 
+    @Override
+    public String toString() {
+        return  "nome = " + nome +
+                ", anoDeLancamento = " + anoDeLancamento +
+                ", duracaoEmMinutos = " + duracaoEmMinutos + " min ";
+    }
 }
 
 
